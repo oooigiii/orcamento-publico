@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PEC com base legal: teto remuneratório, referendo de subsídios, integridade da Justiça Federal, emendas parlamentares e Fundo Eleitoral. Entenda de forma simples e direta.">
+<title>PEC — Disciplina Fiscal, Justiça Social e Integridade Pública</title>
+<style>
+  :root{
+    --verde:#22a06b;
+    --verde-esc:#0e6b45;
+    --verde-claro:#e6f7ef;
+    --menta:#b8f0d5;
+    --dourado:#f5b301;
+    --dourado-claro:#fff6d6;
+    --lilas:#7c5cff;
+    --lilas-claro:#f0ecff;
+    --coral:#ff6b6b;
+    --coral-claro:#ffe9e9;
+    --azul:#3b82f6;
+    --azul-claro:#e8f0fe;
+    --cinza:#f8f9fc;
+    --texto:#1a1d29;
+    --texto-suave:#5a6172;
+    --borda:#e5e8f0;
+    --branco:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{
+    font-family:"Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--texto);
+    background:var(--cinza);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .skip{position:absolute;left:-9999px;top:0;background:var(--dourado);color:var(--texto);padding:10px 16px;font-weight:700;z-index:999;border-radius:0 0 8px 0}
+  .skip:focus{left:0}
+
+  /* ---------- HEADER ---------- */
+  header{
+    background:linear-gradient(135deg,#e6f7ef 0%,#f0ecff 50%,#fff6d6 100%);
+    padding:80px 20px 60px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    width:300px;height:300px;
+    background:radial-gradient(circle,rgba(124,92,255,.15),transparent 70%);
+    top:-100px;right:-80px;
+    border-radius:50%;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    width:250px;height:250px;
+    background:radial-gradient(circle,rgba(34,160,107,.15),transparent 70%);
+    bottom:-80px;left:-60px;
+    border-radius:50%;
+  }
+  .brasao{
+    width:88px;height:88px;
+    border-radius:24px;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 24px;
+    font-size:40px;
+    background:var(--branco);
+    box-shadow:0 12px 40px rgba(124,92,255,.2);
+    position:relative;z-index:1;
+    transform:rotate(-6deg);
+    transition:transform .3s;
+  }
+  .brasao:hover{transform:rotate(0) scale(1.05)}
+  header h1{
+    font-size:2.2rem;
+    font-weight:800;
+    max-width:900px;
+    margin:0 auto 16px;
+    line-height:1.25;
+    color:var(--texto);
+    position:relative;z-index:1;
+    letter-spacing:-.02em;
+  }
+  header h1 .destaque{
+    background:linear-gradient(120deg,var(--verde) 0%,var(--lilas) 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  header .subtitulo{
+    font-size:1.08rem;
+    color:var(--texto-suave);
+    max-width:760px;
+    margin:0 auto;
+    position:relative;z-index:1;
+  }
+  .badges{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    margin-top:26px;position:relative;z-index:1;
+  }
+  .badge{
+    display:inline-block;
+    background:var(--branco);
+    color:var(--verde-esc);
+    font-weight:700;
+    font-size:.78rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    padding:8px 18px;
+    border-radius:24px;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+    border:1px solid var(--borda);
+  }
+  .badge.lilas{color:var(--lilas);border-color:#ddd4ff}
+  .badge.dourado{color:#a67c00;border-color:#ffe9a8}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--borda);
+  }
+  nav ul{
+    list-style:none;
+    display:flex;flex-wrap:wrap;justify-content:center;
+    max-width:1250px;margin:0 auto;
+    padding:6px 10px;
+    gap:4px;
+  }
+  nav a{
+    display:block;
+    padding:10px 14px;
+    color:var(--texto-suave);
+    text-decoration:none;
+    font-size:.85rem;
+    font-weight:600;
+    border-radius:20px;
+    transition:.2s;
+    white-space:nowrap;
+  }
+  nav a:hover,nav a:focus{background:var(--verde-claro);color:var(--verde-esc)}
+  nav a.ativo{background:var(--verde);color:var(--branco)}
+
+  /* ---------- LAYOUT ---------- */
+  main{max-width:1020px;margin:0 auto;padding:44px 20px 90px}
+  section{
+    background:var(--branco);
+    border:1px solid var(--borda);
+    border-radius:24px;
+    padding:40px;
+    margin-bottom:32px;
+    box-shadow:0 4px 24px rgba(0,0,0,.04);
+    scroll-margin-top:90px;
+    position:relative;
+  }
+  section h2{
+    color:var(--texto);
+    font-size:1.6rem;
+    margin-bottom:24px;
+    display:flex;align-items:center;gap:14px;
+    line-height:1.3;
+    font-weight:800;
+    letter-spacing:-.01em;
+  }
+  section h2 .num{
+    background:linear-gradient(135deg,var(--verde),var(--lilas));
+    color:var(--branco);
+    width:44px;height:44px;min-width:44px;
+    border-radius:14px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:1.1rem;
+    font-weight:800;
+    box-shadow:0 4px 14px rgba(34,160,107,.3);
+  }
+  section h3{
+    color:var(--verde-esc);
+    font-size:1.15rem;
+    margin:32px 0 14px;
+    line-height:1.4;
+    font-weight:700;
+    display:flex;align-items:center;gap:8px;
+  }
+  section h3:first-of-type{margin-top:0}
+
+  /* ---------- BLOCKQUOTE ---------- */
+  blockquote{
+    background:linear-gradient(135deg,var(--verde-claro),#f0faf5);
+    border-left:5px solid var(--verde);
+    padding:22px 24px;
+    margin:18px 0;
+    border-radius:0 16px 16px 0;
+    font-size:.97rem;
+    color:#2a2f3a;
+  }
+  blockquote strong{color:var(--verde-esc);font-weight:700}
+  blockquote .rotulo{
+    display:inline-block;
+    font-size:.72rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--verde-esc);
+    font-weight:800;
+    margin-bottom:10px;
+    background:var(--branco);
+    padding:4px 12px;
+    border-radius:12px;
+    border:1px solid var(--menta);
+  }
+
+  /* ---------- BASE LEGAL TAGS ---------- */
+  .base-legal{
+    display:inline-flex;align-items:center;gap:5px;
+    background:var(--azul-claro);
+    color:var(--azul);
+    font-size:.78rem;
+    font-weight:700;
+    padding:5px 12px;
+    border-radius:20px;
+    margin:4px 6px 10px 0;
+    border:1px solid #c9dcfc;
+  }
+  .base-legal::before{content:"📜"}
+
+  p{margin-bottom:15px;color:#2a2f3a}
+  p:last-child{margin-bottom:0}
+  ul.lista,ol.lista{margin:0 0 18px 24px;color:#2a2f3a}
+  ul.lista li,ol.lista li{margin-bottom:10px}
+
+  /* ---------- CARDS ---------- */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin:28px 0;
+  }
+  .card{
+    background:var(--branco);
+    border:1px solid var(--borda);
+    border-radius:20px;
+    padding:24px;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--verde),var(--lilas));
+  }
+  .card:nth-child(2)::before{background:linear-gradient(90deg,var(--dourado),#ff9f1c)}
+  .card:nth-child(3)::before{background:linear-gradient(90deg,var(--lilas),#a78bfa)}
+  .card:nth-child(4)::before{background:linear-gradient(90deg,var(--coral),#ff9f9f)}
+  .card:nth-child(5)::before{background:linear-gradient(90deg,var(--azul),#60a5fa)}
+  .card:nth-child(6)::before{background:linear-gradient(90deg,var(--verde),#34d399)}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);border-color:transparent}
+  .card .emoji{font-size:1.8rem;display:block;margin-bottom:10px}
+  .card h4{color:var(--texto);font-size:1rem;margin-bottom:8px;line-height:1.3;font-weight:800}
+  .card p{font-size:.88rem;margin:0;color:var(--texto-suave);line-height:1.6}
+  .card .destaque{
+    display:block;
+    font-size:1.8rem;
+    font-weight:900;
+    background:linear-gradient(120deg,var(--verde),var(--lilas));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    margin-bottom:6px;
+    line-height:1;
+  }
+
+  /* ---------- TABELA ---------- */
+  .tabela-wrap{overflow-x:auto;margin-top:20px;border-radius:16px;border:1px solid var(--borda)}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:680px}
+  thead th{
+    background:linear-gradient(135deg,var(--verde),var(--verde-esc));
+    color:var(--branco);
+    text-align:left;
+    padding:14px 16px;
+    font-weight:700;
+    font-size:.8rem;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  tbody td{padding:14px 16px;border-bottom:1px solid var(--borda);vertical-align:top;line-height:1.6;color:#2a2f3a}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:nth-child(even){background:#fafbfe}
+  tbody tr:hover{background:var(--verde-claro)}
+  tbody td strong{color:var(--verde-esc)}
+
+  /* ---------- ALERTAS ---------- */
+  .alerta{
+    background:var(--dourado-claro);
+    border:1px solid #ffe9a8;
+    border-radius:16px;
+    padding:20px 22px;
+    margin:22px 0;
+    font-size:.93rem;
+    line-height:1.7;
+    color:#5a4a1a;
+  }
+  .alerta strong{color:#8a6d1a}
+  .alerta.verde{background:var(--verde-claro);border-color:var(--menta);color:#0e4a30}
+  .alerta.verde strong{color:var(--verde-esc)}
+  .alerta.azul{background:var(--azul-claro);border-color:#c9dcfc;color:#1e3a5f}
+  .alerta.azul strong{color:var(--azul)}
+  .alerta.lilas{background:var(--lilas-claro);border-color:#ddd4ff;color:#3d2d80}
+  .alerta.lilas strong{color:var(--lilas)}
+
+  /* ---------- PILARES ---------- */
+  .pilares{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+    margin:28px 0;
+  }
+  .pilar{
+    background:linear-gradient(135deg,var(--verde-claro),#f5fdf9);
+    border:1px solid var(--menta);
+    border-radius:20px;
+    padding:26px;
+  }
+  .pilar.integridade{
+    background:linear-gradient(135deg,var(--lilas-claro),#f8f6ff);
+    border-color:#ddd4ff;
+  }
+  .pilar h4{
+    color:var(--texto);
+    font-size:1.1rem;
+    margin-bottom:14px;
+    display:flex;align-items:center;gap:10px;
+    font-weight:800;
+  }
+  .pilar h4 .icone{font-size:1.5rem}
+  .pilar ul{margin:0 0 0 18px;font-size:.9rem;color:var(--texto-suave);line-height:1.7}
+  .pilar ul li{margin-bottom:8px}
+  .pilar ul li::marker{color:var(--verde)}
+
+  /* ---------- STATS / NÚMEROS ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:16px;
+    margin:24px 0;
+  }
+  .stat{
+    text-align:center;
+    padding:22px 16px;
+    background:var(--branco);
+    border-radius:18px;
+    border:1px solid var(--borda);
+  }
+  .stat .valor{
+    font-size:2rem;
+    font-weight:900;
+    background:linear-gradient(120deg,var(--verde),var(--lilas));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    display:block;
+    line-height:1.1;
+  }
+  .stat .label{font-size:.82rem;color:var(--texto-suave);margin-top:6px;font-weight:600}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--texto);
+    color:#a8b0c2;
+    text-align:center;
+    padding:48px 20px;
+    font-size:.88rem;
+    line-height:1.8;
+    border-radius:32px 32px 0 0;
+    margin-top:20px;
+  }
+  footer strong{color:var(--branco)}
+  footer .linha{width:60px;height:4px;background:linear-gradient(90deg,var(--verde),var(--lilas));margin:0 auto 20px;border-radius:2px}
+
+  /* ---------- BOTÃO TOPO ---------- */
+  #topo{
+    position:fixed;
+    bottom:26px;right:26px;
+    background:linear-gradient(135deg,var(--verde),var(--lilas));
+    color:var(--branco);
+    border:none;
+    width:52px;height:52px;
+    border-radius:16px;
+    font-size:1.4rem;
+    cursor:pointer;
+    box-shadow:0 8px 24px rgba(124,92,255,.35);
+    opacity:0;pointer-events:none;
+    transition:.3s;
+    z-index:60;
+    display:flex;align-items:center;justify-content:center;
+  }
+  #topo.visivel{opacity:1;pointer-events:auto}
+  #topo:hover,#topo:focus{transform:translateY(-4px);box-shadow:0 12px 32px rgba(124,92,255,.45);outline:none}
+
+  /* ---------- IMPRESSÃO ---------- */
+  @media print{
+    nav,#topo,.skip{display:none}
+    body{background:#fff;font-size:11pt}
+    header{background:#e6f7ef !important;-webkit-print-color-adjust:exact;padding:30px 20px}
+    section{box-shadow:none;page-break-inside:avoid;border:1px solid #ccc;margin-bottom:16px}
+    a{color:inherit;text-decoration:none}
+  }
+  @media(max-width:640px){
+    header h1{font-size:1.6rem}
+    header{padding:60px 16px 44px}
+    section{padding:26px 20px;border-radius:20px}
+    nav a{padding:8px 10px;font-size:.76rem}
+    section h2{font-size:1.3rem}
+    section h2 .num{width:38px;height:38px;min-width:38px;font-size:.95rem}
+  }
+</style>
+</head>
+<body>
+
+<a href="#conteudo" class="skip">Pular para o conteúdo principal</a>
+
+<!-- HEADER -->
+<header>
+  <div class="brasao" aria-hidden="true">⚖️</div>
+  <h1>Uma PEC para <span class="destaque">aproximar o poder público</span> de você</h1>
+  <p class="subtitulo">Teto remuneratório, referendo de subsídios, integridade na Justiça Federal, emendas sob consulta popular e Fundo Eleitoral com transparência — tudo explicado de forma direta, com base na Constituição e nas leis brasileiras.</p>
+  <div class="badges">
+    <span class="badge">PEC com base legal</span>
+    <span class="badge lilas">Democracia direta</span>
+    <span class="badge dourado">Justiça social</span>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav aria-label="Navegação principal">
+  <ul>
+    <li><a href="#ementa">Ementa</a></li>
+    <li><a href="#pilares">Pilares</a></li>
+    <li><a href="#texto">Texto da PEC</a></li>
+    <li><a href="#justificacao">Justificação</a></li>
+    <li><a href="#compatibilidade">Compatibilidade</a></li>
+    <li><a href="#impacto">Impacto</a></li>
+    <li><a href="#transicao">Transição</a></li>
+    <li><a href="#assinaturas">Assinaturas</a></li>
+  </ul>
+</nav>
+
+<main id="conteudo">
+
+  <!-- EMENTA -->
+  <section id="ementa">
+    <h2><span class="num">📋</span> Ementa em linguagem simples</h2>
+    <p>Esta PEC mexe em sete pontos da Constituição para deixar o dinheiro público mais transparente, os salários dos agentes públicos mais justos e as decisões sobre recursos mais próximas da população. Cada mudança tem base em lei que já existe — nada é invenção.</p>
+    <blockquote>
+      Altera os arts. 5º, 14, 17, 37, 163, 166 e 169 da Constituição Federal para: (i) vincular o <strong>teto remuneratório de todos os agentes públicos ao salário mínimo nacional</strong>, com base no art. 37, XI, e no art. 169 da CF e na LC nº 101/2000 (LRF); (ii) submeter a <strong>fixação e o aumento de subsídios de agentes políticos a referendo popular</strong>, com fundamento no art. 14 da CF; (iii) vedar a <strong>participação de membros da Magistratura Federal, do MPF e de dirigentes da PF como sócios controladores de empresas privadas</strong>, em coerência com a LC nº 35/1979 (LOMAN) e a Lei nº 8.429/1992; (iv) estabelecer <strong>indicadores de sustentabilidade da dívida pública</strong> e ajuste fiscal com proteção das despesas sociais, em conformidade com a EC nº 109/2021 e a LC nº 200/2023; (v) reforçar o combate ao <strong>tráfico de influência e à apropriação indébita</strong>, com base nos arts. 168 e 332 do Código Penal e na Lei nº 8.429/1992; (vi) submeter a <strong>destinação de emendas parlamentares a consulta popular vinculante por urna eletrônica</strong>, em resposta à ADPF 854/STF e à LC nº 210/2024; e (vii) exigir <strong>transparência integral do Fundo Eleitoral</strong> e determinar sua <strong>redução em 50%</strong>, com base na Lei nº 13.487/2017 e na Lei nº 12.527/2011 (LAI).
+    </blockquote>
+
+    <div class="cards">
+      <div class="card"><span class="emoji">💰</span><span class="destaque">10×</span><h4>Teto remuneratório</h4><p>Nenhum agente público pode receber mais que dez salários mínimos, somando todas as vantagens. Base: CF art. 37, XI + LRF.</p></div>
+      <div class="card"><span class="emoji">🗳️</span><span class="destaque">Referendo</span><h4>Subsídios sob seu voto</h4><p>Aumento de salário de presidente, governador, prefeito, senador, deputado e vereador só passa com aprovação popular. Base: CF art. 14.</p></div>
+      <div class="card"><span class="emoji">🛡️</span><span class="destaque">Integridade</span><h4>Sem conflito de interesse</h4><p>Juiz federal, promotor federal e dirigente da PF não podem ser sócios controladores de empresa privada. Base: LOMAN + Lei 8.429.</p></div>
+      <div class="card"><span class="emoji">🤝</span><span class="destaque">Sem retrocesso</span><h4>Ajuste com justiça social</h4><p>Corte de gastos não pode atingir Bolsa Família, BPC, saúde e educação. Base: EC 109/2021 + LC 200/2023.</p></div>
+      <div class="card"><span class="emoji">📱</span><span class="destaque">Urna</span><h4>Emendas sob consulta</h4><p>A população decide, pela urna eletrônica, onde o dinheiro da emenda parlamentar vai ser aplicado. Base: ADPF 854 + LC 210/2024.</p></div>
+      <div class="card"><span class="emoji">✂️</span><span class="destaque">−50%</span><h4>Fundo Eleitoral</h4><p>Metade do fundo eleitoral vai para saúde e assistência social, com transparência total. Base: Lei 13.487/2017 + LAI.</p></div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section id="pilares">
+    <h2><span class="num">🎯</span> Os dois pilares</h2>
+    <p>Tudo nesta PEC gira em torno de duas ideias: <strong>justiça social</strong> (o ajuste fiscal não pode pesar sobre quem mais precisa) e <strong>integridade das instituições</strong> (quem decide sobre dinheiro público precisa de regras claras de conduta).</p>
+    <div class="pilares">
+      <div class="pilar">
+        <h4><span class="icone">🤝</span> Justiça Social</h4>
+        <ul>
+          <li>Teto vinculado ao salário mínimo (CF art. 37, XI; LRF art. 19).</li>
+          <li>Proteção das despesas sociais no ajuste (CF arts. 203 e 212).</li>
+          <li>Redução do Fundo Eleitoral com destinação à saúde e assistência (Lei 13.487/2017).</li>
+          <li>Alinhamento com o art. 3º, III, da CF (erradicar a pobreza e reduzir desigualdades).</li>
+        </ul>
+      </div>
+      <div class="pilar integridade">
+        <h4><span class="icone">🛡️</span> Integridade Parlamentar e da Justiça</h4>
+        <ul>
+          <li>Referendo de subsídios (CF art. 14).</li>
+          <li>Vedação societária (LOMAN; Lei 8.429/1992).</li>
+          <li>Responsabilização por tráfico de influência e apropriação indébita (CP arts. 168 e 332).</li>
+          <li>Consulta popular de emendas (ADPF 854; LC 210/2024).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEXTO -->
+  <section id="texto">
+    <h2><span class="num">📜</span> Texto da proposta com base legal</h2>
+
+    <h3>Art. 1º — Teto remuneratório e responsabilidade fiscal</h3>
+    <div>
+      <span class="base-legal">CF art. 37, XI</span>
+      <span class="base-legal">CF art. 169</span>
+      <span class="base-legal">LC nº 101/2000 (LRF), arts. 18 e 19</span>
+    </div>
+    <blockquote>
+      <span class="rotulo">Art. 37, XI-A (novo)</span>
+      A remuneração, os subsídios, as gratificações, os auxílios, as representações e qualquer outra espécie de vantagem pecuniária, <strong>somados</strong>, dos agentes públicos dos Poderes Executivo, Legislativo e Judiciário, do Ministério Público e dos Tribunais de Contas da União, dos Estados, do Distrito Federal e dos Municípios — incluindo o Presidente da República, o Vice-Presidente, os Senadores, os Deputados Federais, os Deputados Estaduais e Distritais, os Governadores, os Prefeitos, os Vereadores, os magistrados e os membros do Ministério Público — <strong>não poderá exceder dez vezes o valor do salário mínimo nacional</strong>.
+    </blockquote>
+    <blockquote>
+      <span class="rotulo">Art. 169, § 2º (novo)</span>
+      Verificada pelo Tribunal de Contas da União, nos termos da lei complementar de que trata o art. 163, VII, a superação dos limites de despesa com pessoal previstos na <strong>Lei de Responsabilidade Fiscal (LC nº 101/2000)</strong>, o ente federado <strong>não poderá criar ou majorar despesa remuneratória</strong> até a integral adequação. O ato normativo que desrespeitar esta vedação é <strong>nulo de pleno direito</strong>, e os valores pagos indevidamente serão ressarcidos ao erário.
+    </blockquote>
+    <div class="alerta verde">
+      <strong>💡 Por que faz sentido:</strong> A LRF já fixa limites de gasto com pessoal (União: 50%; Estados e Municípios: 60% da receita corrente líquida). O art. 169 da Constituição manda observar esses limites. A PEC conecta o teto individual ao salário mínimo, criando um freio automático que impede a folha do alto funcionalismo de crescer sem controle.
+    </div>
+
+    <h3>Art. 2º — Subsídios de agentes políticos sob referendo popular</h3>
+    <div>
+      <span class="base-legal">CF art. 14, I, II e III</span>
+      <span class="base-legal">CF art. 37, XXII (novo)</span>
+      <span class="base-legal">CF art. 14, §§ 12 e 14</span>
+    </div>
+    <blockquote>
+      <span class="rotulo">Art. 37, XXII (novo)</span>
+      A fixação ou o aumento dos subsídios do Presidente da República, do Vice-Presidente, dos Senadores, dos Deputados Federais, dos Governadores, dos Prefeitos e dos Vereadores <strong>dependerá de aprovação em referendo</strong>, vedada a deliberação, pelo próprio beneficiário, de proposta que majore sua remuneração durante o mandato.
+    </blockquote>
+    <blockquote>
+      <span class="rotulo">Art. 14, § 14 (novo)</span>
+      O referendo de que trata o art. 37, XXII, será convocado com <strong>antecedência mínima de noventa dias</strong> e realizado, preferencialmente, <strong>em conjunto com eleições regulares</strong>, observado o disposto no art. 14, § 12, quanto à realização de consultas populares.
+    </blockquote>
+    <div class="alerta verde">
+      <strong>💡 Por que faz sentido:</strong> O art. 14 da Constituição já prevê plebiscito, referendo e iniciativa popular. O § 12 (incluído pela EC 111/2021) já permite consultas populares junto às eleições municipais. A PEC aplica esse modelo ao aumento de subsídios: quem decide é você, não o próprio beneficiário.
+    </div>
+
+    <h3>Art. 3º — Vedação de participação societária de agentes da Justiça Federal</h3>
+    <div>
+      <span class="base-legal">LC nº 35/1979 (LOMAN)</span>
+      <span class="base-legal">Lei nº 8.429/1992 (red. Lei 14.230/2021)</span>
+      <span class="base-legal">CF art. 37, XXIII (novo)</span>
+    </div>
+    <blockquote>
+      <span class="rotulo">Art. 37, XXIII (novo)</span>
+      Os magistrados federais, os membros do Ministério Público Federal e os ocupantes de cargos de direção ou de investigação no âmbito da Polícia Federal <strong>não poderão ser sócios controladores, quotistas majoritários, administradores ou conselheiros de empresas privadas</strong>, nem nelas exercer atividade remunerada, ressalvadas a participação em sociedades de economia mista, em cooperativas e em entidades sem fins lucrativos, bem como a titularidade de <strong>ações não controladoras</strong> em companhias abertas, na forma da lei.
+    </blockquote>
+    <div class="alerta verde">
+      <strong>💡 Por que faz sentido:</strong> A LOMAN já proíbe juiz de exercer comércio. A Lei 8.429/1992 (com a redação da Lei 14.230/2021) exige dolo específico para improbidade. A PEC eleva a vedação ao plano constitucional e a estende ao MPF e à PF, sem proibir investimentos minoritários em bolsa — equilíbrio entre integridade e liberdade econômica.
+    </div>
+
+    <h3>Art. 4º — Sustentabilidade da dívida e ajuste fiscal com proteção social</h3>
+    <div>
+      <span class="base-legal">CF art. 163, VII (novo)</span>
+      <span class="base-legal">EC nº 109/2021</span>
+      <span class="base-legal">LC nº 200/2023 (arcabouço fiscal)</span>
+      <span class="base-legal">CF arts. 203 e 212</span>
+    </div>
+    <blockquote>
+      <span class="rotulo">Art. 163, VII (novo)</span>
+      Lei complementar disporá sobre <strong>indicadores de sustentabilidade da dívida pública</strong> e mecanismos de ajuste fiscal, assegurando que o crescimento da dívida pública não supere, por dois exercícios consecutivos, o crescimento do Produto Interno Bruto. Constatada a insustentabilidade pelo Tribunal de Contas da União, o Poder Executivo encaminhará ao Congresso Nacional, em <strong>noventa dias</strong>, projeto de lei de ajuste fiscal, que <strong>não poderá reduzir</strong> as despesas de assistência social (art. 203) nem os recursos vinculados à educação e à saúde (arts. 198, § 2º, e 212).
+    </blockquote>
+    <div class="alerta verde">
+      <strong>💡 Por que faz sentido:</strong> A EC 109/2021 já criou gatilhos de contenção quando a despesa obrigatória supera 95% da despesa total. A LC 200/2023 trouxe metas e trajetória de dívida. A PEC acrescenta um indicador explícito de sustentabilidade e uma trava: ajuste fiscal não pode cortar Bolsa Família, BPC, saúde e educação.
+    </div>
+
+    <h3>Art. 5º — Tráfico de influência e apropriação indébita</h3>
+    <div>
+      <span class="base-legal">CP art. 168</span>
+      <span class="base-legal">CP art. 332</span>
+      <span class="base-legal">CF art. 5º, LXXIX (novo)</span>
+      <span class="base-legal">Lei nº 8.429/1992</span>
+    </div>
+    <blockquote>
+      <span class="rotulo">Art. 5º, LXXIX (novo)</span>
+      O agente público que se valer do cargo para obter vantagem indevida para si ou para outrem, ou que se apropriar de bens ou recursos públicos, responderá criminalmente e perderá o cargo e os direitos políticos, nos termos do art. 15, V, e do art. 37, § 4º, ficando obrigado à <strong>reparação integral do dano</strong>. Nas hipóteses de <strong>tráfico de influência</strong> e de <strong>apropriação indébita de recursos públicos</strong>, a pretensão punitiva e a pretensão de ressarcimento <strong>não se sujeitam à prescrição enquanto não integralmente reparado o dano</strong>.
+    </blockquote>
+    <div class="alerta">
+      <strong>⚠️ Interpretação conforme a Constituição:</strong> a imprescritibilidade condicionada aplica-se à pretensão de ressarcimento ao erário e à pretensão punitiva quanto aos arts. 168 e 332 do CP, <strong>não alcançando fatos anteriores</strong> à vigência da Emenda (art. 5º, XL, CF). A Lei 8.429/1992 prevê indisponibilidade de bens (art. 16) para garantir a recomposição do erário.
+    </div>
+
+    <h3>Art. 6º — Emendas parlamentares e consulta popular por urna eletrônica</h3>
+    <div>
+      <span class="base-legal">ADPF 854/STF</span>
+      <span class="base-legal">LC nº 210/2024</span>
+      <span class="base-legal">CF art. 166, § 5º (novo)</span>
+      <span class="base-legal">CF art. 14, § 15 (novo)</span>
+    </div>
+    <blockquote>
+      <span class="rotulo">Art. 166, § 5º (novo)</span>
+      A destinação de recursos por meio de emendas parlamentares de qualquer espécie dependerá de <strong>consulta popular prévia</strong>, realizada por meio da <strong>urna eletrônica</strong>, na circunscrição eleitoral do parlamentar proponente.
+      <br><br>
+      <strong>I</strong> — A consulta será realizada <strong>anualmente</strong>, preferencialmente em conjunto com o processo eleitoral.
+      <br><br>
+      <strong>II</strong> — O resultado <strong>vinculará</strong> a destinação da emenda, vedada alteração posterior, ressalvada impossibilidade técnica ou jurídica fundamentada e aprovada pelo órgão de controle.
+      <br><br>
+      <strong>III</strong> — A ausência de consulta ou a destinação em desacordo configura <strong>desvio de finalidade</strong>, sujeitando o responsável às sanções do art. 37, § 4º, e da Lei nº 8.429/1992.
+    </blockquote>
+    <div class="alerta azul">
+      <strong>📌 Contexto:</strong> O STF, na ADPF 854, declarou inconstitucional o “orçamento secreto” e exigiu transparência, impessoalidade e publicidade na identificação de proponentes e beneficiários. A LC 210/2024 regulamentou as emendas, mas lacunas de rastreabilidade persistem. A PEC acrescenta a consulta popular vinculante por urna eletrônica — tecnologia já usada pela Justiça Eleitoral com auditabilidade reconhecida.
+    </div>
+
+    <h3>Art. 7º — Transparência e redução do Fundo Eleitoral</h3>
+    <div>
+      <span class="base-legal">Lei nº 13.487/2017 (FEFC)</span>
+      <span class="base-legal">Lei nº 9.504/1997, art. 16-C</span>
+      <span class="base-legal">Lei nº 12.527/2011 (LAI)</span>
+      <span class="base-legal">CF art. 17, § 8º (novo)</span>
+    </div>
+    <blockquote>
+      <span class="rotulo">Art. 17, § 8º (novo)</span>
+      O Fundo Especial de Financiamento de Campanha (FEFC) observará:
+      <br><br>
+      <strong>I</strong> — <strong>transparência pública integral</strong>: divulgação nominal de beneficiários, valores e aplicação em portal de acesso público, em formato aberto, no prazo máximo de <strong>trinta dias</strong>;
+      <br><br>
+      <strong>II</strong> — <strong>redução de cinquenta por cento</strong> do montante global do Fundo, com destinação da economia ao <strong>Fundo Nacional de Assistência Social</strong> e ao <strong>Fundo Nacional de Saúde</strong>;
+      <br><br>
+      <strong>III</strong> — vedação à utilização para despesas de custeio permanente de partidos, salvo as estritamente vinculadas à campanha;
+      <br><br>
+      <strong>IV</strong> — a prestação de contas detalhada constitui condição de <strong>novos repasses</strong>.
+    </blockquote>
+    <div class="alerta azul">
+      <strong>📌 Contexto:</strong> O FEFC foi criado pela Lei 13.487/2017, que alterou a Lei 9.504/1997. O art. 16-C da Lei Eleitoral disciplina sua distribuição. A LAI (Lei 12.527/2011) impõe publicidade de informações públicas. A PEC constitucionaliza a transparência integral e a redução de 50%, com destinação social da economia.
+    </div>
+  </section>
+
+  <!-- JUSTIFICAÇÃO -->
+  <section id="justificacao">
+    <h2><span class="num">💬</span> Justificação</h2>
+
+    <h3>I. Ajuste fiscal com justiça social</h3>
+    <p>A LRF (LC 101/2000) já fixa limites rígidos: União em 50% e Estados/Municípios em 60% da receita corrente líquida. O art. 169 da CF manda observar esses limites. A PEC vincula o teto individual ao salário mínimo, criando um freio automático. A EC 109/2021 e a LC 200/2023 já preveem contenção; a PEC complementa com proteção expressa das despesas sociais (CF arts. 203 e 212).</p>
+
+    <h3>II. Fim da autodeliberação de subsídios</h3>
+    <p>O art. 14 da CF prevê plebiscito, referendo e iniciativa popular. A submissão do aumento de subsídios ao referendo devolve ao titular da soberania a decisão final, rompendo com o conflito de interesses de o Legislativo autofixar sua remuneração. A realização junto às eleições (art. 14, § 14) reduz custos, seguindo o modelo do § 12 do art. 14.</p>
+
+    <h3>III. Integridade da Justiça Federal</h3>
+    <p>A LOMAN (LC 35/1979) já veda ao magistrado o exercício do comércio. A Lei 8.429/1992 (red. Lei 14.230/2021) exige dolo específico para improbidade. A PEC eleva a vedação ao plano constitucional e a estende ao MPF e à PF, preservando ações não controladoras e participações em cooperativas — equilíbrio entre integridade e liberdade econômica.</p>
+
+    <h3>IV. Tráfico de influência e apropriação indébita</h3>
+    <p>Os arts. 168 e 332 do CP tipificam apropriação indébita e tráfico de influência. A Lei 8.429/1992 prevê indisponibilidade de bens (art. 16) para garantir a recomposição do erário. A PEC acrescenta consequência constitucional e imprescritibilidade condicionada à reparação, sem afrontar a irretroatividade penal (art. 5º, XL).</p>
+
+    <h3>V. Emendas parlamentares: da transparência à legitimação popular</h3>
+    <p>O STF, na ADPF 854, declarou inconstitucional o “orçamento secreto” por violar transparência, impessoalidade, moralidade e publicidade. A LC 210/2024 regulamentou as emendas, mas lacunas de rastreabilidade persistem. A consulta popular vinculante por urna eletrônica acrescenta legitimação democrática direta, com tecnologia já operada pela Justiça Eleitoral.</p>
+
+    <h3>VI. Fundo Eleitoral: transparência e redução com destinação social</h3>
+    <p>O FEFC foi criado pela Lei 13.487/2017. O art. 16-C da Lei 9.504/1997 disciplina sua distribuição. A LAI impõe publicidade. A redução de 50%, com destinação à saúde e assistência social, concretiza o art. 3º, III, da CF e dialoga com o debate legislativo sobre a extinção do fundo.</p>
+
+    <h3>VII. Coerência com o arcabouço vigente</h3>
+    <p>A PEC não revoga a EC 109/2021 nem a LC 200/2023; complementa-as com teto individual, indicador de dívida, proteção social, consulta popular de emendas e transparência do FEFC.</p>
+  </section>
+
+  <!-- COMPATIBILIDADE -->
+  <section id="compatibilidade">
+    <h2><span class="num">🔗</span> Como a PEC conversa com as leis atuais</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Norma vigente</th><th>Conteúdo</th><th>Como a PEC se articula</th></tr></thead>
+        <tbody>
+          <tr><td><strong>CF art. 37, XI</strong></td><td>Teto remuneratório único (subsídio de Ministro do STF)</td><td>Substituído por teto vinculado ao salário mínimo, com somatório de vantagens</td></tr>
+          <tr><td><strong>CF art. 169</strong></td><td>Despesa com pessoal e limites da LRF</td><td>Acrescenta § 2º para nulificar atos que majorem remuneração em desacordo com a LRF</td></tr>
+          <tr><td><strong>LC 101/2000 (LRF)</strong></td><td>Limites de despesa com pessoal (União 50%; Estados/Municípios 60%)</td><td>Conectada ao novo art. 169, § 2º, com nulidade do ato e ressarcimento</td></tr>
+          <tr><td><strong>CF art. 14</strong></td><td>Plebiscito, referendo e iniciativa popular</td><td>Acrescenta §§ 14 e 15 para organizar referendo de subsídios e consulta por urna</td></tr>
+          <tr><td><strong>CF art. 166</strong></td><td>Emendas parlamentares ao orçamento</td><td>Acrescenta § 5º com consulta popular prévia vinculante</td></tr>
+          <tr><td><strong>CF art. 17</strong></td><td>Financiamento partidário e eleitoral</td><td>Acrescenta § 8º com transparência integral e redução de 50% do FEFC</td></tr>
+          <tr><td><strong>CF art. 163</strong></td><td>Lei complementar sobre finanças públicas</td><td>Acrescenta VII com indicadores de dívida e proteção social</td></tr>
+          <tr><td><strong>EC 109/2021</strong></td><td>Gatilhos de contenção de despesa</td><td>Preservada; complementada com teto individual e proteção social</td></tr>
+          <tr><td><strong>LC 200/2023</strong></td><td>Novo arcabouço fiscal (metas e trajetória de dívida)</td><td>Preservada; adiciona indicador explícito de sustentabilidade</td></tr>
+          <tr><td><strong>LC 35/1979 (LOMAN)</strong></td><td>Vedação ao exercício do comércio por magistrados</td><td>Elevada ao plano constitucional e estendida ao MPF e à PF</td></tr>
+          <tr><td><strong>Lei 8.429/1992</strong></td><td>Improbidade administrativa (red. Lei 14.230/2021)</td><td>Reforçada pela norma constitucional de conduta e imprescritibilidade</td></tr>
+          <tr><td><strong>CP arts. 168 e 332</strong></td><td>Apropriação indébita e tráfico de influência</td><td>Tipos preservados; acrescentada consequência constitucional e ressarcimento</td></tr>
+          <tr><td><strong>ADPF 854/STF</strong></td><td>Declarou inconstitucional o “orçamento secreto”</td><td>Consulta popular vinculante acrescenta legitimação democrática direta</td></tr>
+          <tr><td><strong>LC 210/2024</strong></td><td>Regras para proposição e execução de emendas</td><td>Preservada; adiciona requisito de consulta popular</td></tr>
+          <tr><td><strong>Lei 13.487/2017</strong></td><td>Criou o FEFC (Fundo Eleitoral)</td><td>Constitucionaliza redução de 50% e transparência</td></tr>
+          <tr><td><strong>Lei 12.527/2011 (LAI)</strong></td><td>Dever de publicidade de informações públicas</td><td>Reforçada com prazo de 30 dias para divulgação de repasses do FEFC</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- IMPACTO -->
+  <section id="impacto">
+    <h2><span class="num">📊</span> O que muda na prática</h2>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Área</th><th>Efeito esperado</th><th>Base legal</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Remuneração de agentes públicos</strong></td><td>Redução da rigidez da folha; aproximação entre topo e base</td><td>CF art. 37, XI; LRF art. 19</td></tr>
+          <tr><td><strong>Subsídios de agentes políticos</strong></td><td>Fim da autodeliberação; controle social</td><td>CF art. 14</td></tr>
+          <tr><td><strong>Magistratura, MPF e PF</strong></td><td>Afastamento de conflitos de interesse</td><td>LOMAN; Lei 8.429/1992</td></tr>
+          <tr><td><strong>Dívida pública e ajuste fiscal</strong></td><td>Disciplina com proteção das despesas sociais</td><td>EC 109/2021; LC 200/2023</td></tr>
+          <tr><td><strong>Tráfico de influência e apropriação indébita</strong></td><td>Redução da impunidade; ressarcimento ao erário</td><td>CP arts. 168 e 332; Lei 8.429/1992</td></tr>
+          <tr><td><strong>Emendas parlamentares</strong></td><td>Fim do “orçamento secreto”; destinação vinculada à escolha popular</td><td>ADPF 854; LC 210/2024</td></tr>
+          <tr><td><strong>Fundo Eleitoral</strong></td><td>Redução de 50% com transparência nominal</td><td>Lei 13.487/2017; LAI</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TRANSIÇÃO -->
+  <section id="transicao">
+    <h2><span class="num">⏳</span> Como entra em vigor</h2>
+    <div class="alerta"><strong>⚠️ Atenção:</strong> as regras abaixo devem ser detalhadas em lei complementar ou disposições transitórias, respeitando a irretroatividade e a segurança jurídica.</div>
+    <ol class="lista">
+      <li><strong>Teto remuneratório:</strong> adequação gradual em até 2 anos, com redução anual mínima de 50% do excedente, preservada a irredutibilidade adquirida (CF art. 37, XV) no que não exceder o novo teto após o prazo.</li>
+      <li><strong>Referendo de subsídios:</strong> primeira consulta em conjunto com as eleições gerais subsequentes, observado o prazo mínimo de 90 dias (CF art. 14, § 14).</li>
+      <li><strong>Agentes da Justiça Federal:</strong> prazo de 1 ano para desinvestimento ou transferência de participações controladoras a trust independente.</li>
+      <li><strong>Sustentabilidade da dívida:</strong> regulamentação por lei complementar, em coordenação com a LC 200/2023 e a EC 109/2021, vigência a partir do exercício seguinte.</li>
+      <li><strong>Tráfico de influência e apropriação indébita:</strong> aplicação apenas a fatos posteriores à vigência da Emenda (CF art. 5º, XL).</li>
+      <li><strong>Consulta popular de emendas:</strong> regulamentação pela Justiça Eleitoral em até 180 dias; primeira consulta no exercício orçamentário seguinte, com possibilidade de projeto-piloto.</li>
+      <li><strong>Redução do Fundo Eleitoral:</strong> aplicação a partir do primeiro ano eleitoral subsequente; destinação da economia definida na lei orçamentária anual.</li>
+    </ol>
+  </section>
+
+  <!-- ASSINATURAS -->
+  <section id="assinaturas">
+    <h2><span class="num">✍️</span> Como a PEC é protocolada</h2>
+    <p>Nos termos do art. 60, I, da CF, a proposta deve ser subscrita por, no mínimo, <strong>um terço dos membros da Câmara dos Deputados</strong> (171) ou <strong>um terço do Senado Federal</strong> (27).</p>
+    <div class="cards">
+      <div class="card"><span class="emoji">🏛️</span><h4>Câmara dos Deputados</h4><p>Mínimo de <strong>171 assinaturas</strong>.</p></div>
+      <div class="card"><span class="emoji">🏛️</span><h4>Senado Federal</h4><p>Mínimo de <strong>27 assinaturas</strong>.</p></div>
+      <div class="card"><span class="emoji">🔄</span><h4>Tramitação</h4><p><strong>Dois turnos</strong>, <strong>3/5</strong> dos membros em cada Casa (art. 60, § 2º).</p></div>
+      <div class="card"><span class="emoji">🔒</span><h4>Cláusulas pétreas</h4><p>Não suprime direitos individuais, forma federativa, voto direto ou separação de poderes (art. 60, § 4º).</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="linha"></div>
+  <p><strong>Proposta de Emenda à Constituição</strong> — Disciplina Fiscal, Justiça Social e Integridade Parlamentar e da Justiça</p>
+  <p style="margin-top:10px;">Documento propositivo. Não substitui a tramitação oficial no Congresso Nacional.</p>
+  <p style="margin-top:10px;"><strong>Base constitucional:</strong> CF arts. 1º, 3º, 5º, 14, 15, 17, 37, 60, 163, 163-A, 166, 169, 198, 203 e 212.</p>
+  <p style="margin-top:10px;"><strong>Base legal:</strong> LC 101/2000 (LRF) · LC 35/1979 (LOMAN) · LC 200/2023 · LC 210/2024 · Lei 8.429/1992 · Lei 9.504/1997 · Lei 13.487/2017 · Lei 12.527/2011 (LAI) · EC 109/2021 · CP arts. 168 e 332 · ADPF 854/STF.</p>
+</footer>
+
+<button id="topo" title="Voltar ao topo" aria-label="Voltar ao topo">↑</button>
+
+<script>
+  const btnTopo = document.getElementById('topo');
+  window.addEventListener('scroll', () => { btnTopo.classList.toggle('visivel', window.scrollY > 400); }, { passive: true });
+  btnTopo.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  const secoes = document.querySelectorAll('section[id]');
+  const linksNav = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        linksNav.forEach(a => { a.classList.toggle('ativo', a.getAttribute('href') === '#' + entry.target.id); });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  secoes.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
